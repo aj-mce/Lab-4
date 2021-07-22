@@ -1,0 +1,62 @@
+public class Box 
+{
+
+public int size = 0;
+public void printBox()
+{
+
+	//rows loop
+	for(int x = 0; x < size; x++)
+	{
+
+	//columns loop
+	for(int y = 0; y < size; y++)
+	{
+
+	//output * (star)
+	System.out.print("*");
+	}
+
+	//next line
+	System.out.println();
+	}
+		
+	}
+// new method
+public void printBox(char c) 
+{   
+    //new rows loop
+	for (int x = 0; x < size; x++) 		
+    {
+		 		
+    //new columns loop
+	for (int y = 0; y < size; y++) 
+    {
+	    	   
+	//new output c
+	System.out.print("c");
+    }
+	       
+	//new next line
+    System.out.println();
+    }
+}
+//main method
+public static void main(String[] args)
+{
+
+	//create Box object
+	Box Box = new Box();
+
+	//change box size to 5
+	Box.size = 5;
+
+	//printBox method
+	Box.printBox();
+		
+	//new printBox method
+	Box.printBox('c'); 
+
+}
+
+}
