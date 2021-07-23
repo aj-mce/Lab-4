@@ -1,0 +1,31 @@
+class Account {
+
+static int numAccounts = 0;
+static int getNumAccounts(){
+	return numAccounts;
+
+}
+
+{
+
+numAccounts += 1;
+}
+
+public static void main(String[] args) {
+
+//testing the Accounts Count
+Account a = new Account();
+
+Account b = new Account();
+
+Account c = new Account();
+
+Account d = new Account();
+
+Account e = new Account();
+
+System.out.println(getNumAccounts());
+
+}
+
+}
