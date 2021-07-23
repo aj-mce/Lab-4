@@ -1,0 +1,77 @@
+public class Card
+{
+
+//stores face values
+public String faceValue; 
+//stores suits
+public String suit;
+
+public Card()
+{
+this.faceValue="";
+this.suit="";
+}
+
+//toString method
+public String toString()
+{
+return this.faceValue+" of "+this.suit;
+}
+
+public static Card[] draw(int num)
+{
+
+Card c[]=new Card[num];
+for(int i=0;i<num;i++)
+{
+
+c[i]=new Card();
+int val;
+
+//while loop to generate values for face cards
+do{
+val=(int)(Math.random()*20);
+}while(val<2||val>14);
+
+//attaches values to royal cards
+if(val==14)
+c[i].faceValue="Ace";
+else if(val==13)
+c[i].faceValue="King";
+else if(val==12)
+c[i].faceValue="Queen";
+else if(val==11)
+c[i].faceValue="Jack";
+else
+c[i].faceValue=String.valueOf(val);
+
+//while loop to generate values for suits
+do{
+val=(int)(Math.random()*10);
+}while(val<1||val>4);
+
+//attaches values to suits
+if(val==1)
+c[i].suit="Spades";
+else if(val==2)
+c[i].suit="Hearts";
+else if(val==3)
+c[i].suit="Diamonds";
+else if(val==4)
+c[i].suit="Clubs";
+}
+
+return c;
+}
+  
+public static void main(String[] args) 
+{
+   //draws 5 random cards
+   Card Cards[]= draw(5);
+   
+   //output
+   for(int i=0;i<5;i++)
+   System.out.println(Cards[i]);
+     
+   }
+}
