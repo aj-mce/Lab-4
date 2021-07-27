@@ -1,0 +1,70 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+	public class Numbers 
+	{
+		//method to find next largest number
+		public static int nextLargest(int array[],int num) 
+		{
+			int nextLargest=-1;
+			for(int i=0;i<array.length;i++) 
+			{
+			if(array[i]>num) 
+			{
+				nextLargest = array[i];
+
+				//breaking the loop
+				break;
+			}
+			}
+			return nextLargest;
+		}
+	//main method
+	public static void main(String[] args)
+	{
+//first user prompt
+Scanner scan = new Scanner(System.in);
+
+	int size;	
+	int array[];
+	int arraySort[];
+
+System.out.print("Enter how many numbers are in array: ");
+
+	size = scan.nextInt();
+	array = new int[size];
+	arraySort = new int[size];
+
+//prompt number input
+System.out.println("Enter numbers: ");
+
+	for(int i=0;i<size;i++) 
+	{
+		array[i] = scan.nextInt();
+		arraySort[i] = array[i];
+	}
+
+//sort and store numbers in sortedArray
+Arrays.sort(arraySort);
+
+//output
+System.out.println("Next largest number for each:");
+
+	for(int i=0;i<size;i++) 
+	{
+		int nextLargest = nextLargest(arraySort, array[i]);
+		if(nextLargest!=-1) 
+		{
+System.out.println(array[i]+": "+nextLargest);
+		} 
+		else 
+		{
+System.out.println(array[i]+ ": " + Integer.MAX_VALUE);
+
+		}	
+		scan.close();
+	}
+
+	}
+
+	}
